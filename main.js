@@ -30,7 +30,7 @@ const loader = new GLTFLoader();
 let object;
 
 // Set which object to render
-let objToRender = 'eye'; // Use 'eye' or any other object name you have
+let objToRender = '3dme';
 
 loader.load(
   `models/${objToRender}/scene.gltf`,
