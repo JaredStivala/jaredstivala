@@ -1,0 +1,121 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  text-align: center;
+  background-color: black;
+}
+
+#container3D {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+header {
+  position: relative;
+  z-index: 3;
+  margin-top: 20px;
+  color: #ffffff;
+}
+
+header h1,
+header h2 {
+  margin: 0;
+}
+
+.audio {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  display: block;
+}
+
+.devIntroText {
+  margin: 20px auto;
+  position: relative;
+  z-index: 3;
+  color: #ffffff;
+}
+
+main {
+  position: relative;
+  z-index: 3;
+}
+
+section {
+  height: 600vh;
+}
+
+.portfolio-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portfolio-item {
+  position: relative;
+  margin: 150vh 0;
+  /* Adjust vertical spacing */
+  width: 80%;
+  max-width: 800px;
+  opacity: 0;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  will-change: opacity, transform;
+  z-index: 2;
+}
+
+/* Align odd items to the left */
+.portfolio-item:nth-child(odd) {
+  align-self: flex-start;
+}
+
+/* Align even items to the right */
+.portfolio-item:nth-child(even) {
+  align-self: flex-end;
+}
+
+.portfolio-item img,
+.portfolio-item video {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 600px;
+  /* Set your desired max height */
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.portfolio-item video {
+  object-fit: contain;
+}
+
+.portfolio-item h2 {
+  margin-top: 10px;
+  font-size: 1.5em;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+  .portfolio-item h2 {
+    font-size: 1.2em;
+  }
+
+  .devIntroText h2 {
+    font-size: 1.5em;
+  }
+}
