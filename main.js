@@ -33,7 +33,7 @@ let object;
 let objToRender = '3dme';
 
 loader.load(
-  `scene.gltf`,
+  `${objToRender}/scene.gltf`,
   function (gltf) {
     object = gltf.scene;
     object.position.set(0, -1.5, 0);
