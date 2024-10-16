@@ -125,3 +125,116 @@ section {
     font-size: 1.5em;
   }
 }
+
+
+.formcarry-container * {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+}
+
+.formcarry-container {
+  /* container */
+  --c-width: 50%;
+  --c-max-width: 500px;
+
+  width: var(--c-width);
+  max-width: var(--c-max-width);
+  display: block;
+  margin: 10vh auto 0 auto;
+}
+
+.formcarry-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formcarry-form label {
+  display: block;
+  padding: 12px 0 2px 0;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  border-color: #000000;
+  text-shadow:
+    -1px -1px 0 black,
+    /* Top-left */
+    1px -1px 0 black,
+    /* Top-right */
+    -1px 1px 0 black,
+    /* Bottom-left */
+    1px 1px 0 black;
+  /* Bottom-right */
+
+}
+
+.formcarry-form input,
+.formcarry-form textarea {
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #000000;
+  border: none;
+  border: 4px solid #ffffff;
+  outline: none;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.formcarry-form input:focus,
+.formcarry-form textarea:focus {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.formcarry-form input:focus:required:invalid {
+  background-color: #000000;
+}
+
+.formcarry-form button {
+  display: block;
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 2px solid white;
+  /* White outline */
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 18px;
+  transition: 300ms all;
+}
+
+.formcarry-form button:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid #ffffff;
+  /* Retain white outline */
+  cursor: pointer;
+}
+
+.formcarry-alert {
+  padding: 12px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 12px;
+  display: none;
+}
+
+.formcarry-alert.visible {
+  display: block;
+}
+
+.formcarry-alert.success {
+  background: #69cf9d;
+}
+
+.formcarry-alert.error {
+  background: #de524c;
+}
