@@ -176,14 +176,17 @@ function onScroll() {
     const itemTop = rect.top;
     const itemHeight = rect.height;
 
-    if (itemTop < viewportHeight - itemHeight / 4) {
-      // Item is in view, reveal it
-      item.style.opacity = 1;
-      item.style.transform = 'translateY(0)';
+    // Adjust the timing and opacity threshold
+    const viewThreshold = viewportHeight - itemHeight / 20;  // Reduce the threshold
+    if (itemTop < viewThreshold) {
+      // Item is in view, reveal it slowly
+      const revealFactor = Math.min(100, (viewThreshold - itemTop) / (viewThreshold));  // Slower reveal
+      item.style.opacity = revealFactor;  // Gradual opacity change
+      item.style.transform = `translateY(${(1 - revealFactor) * 10}px)`;  // Slow translation
     } else {
-      // Item is out of view, hide it
+      // Item is out of view, hide it gradually
       item.style.opacity = 0;
-      item.style.transform = 'translateY(50px)';
+      item.style.transform = 'translateY(20px)';
     }
   });
 }
