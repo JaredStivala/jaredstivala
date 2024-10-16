@@ -99,7 +99,6 @@ function createPortfolioItem(id, mediaPath, title, link) {
   portfolioItems.push(div);
 }
 
-
 // Create portfolio items with images and videos
 createPortfolioItem('item1', 'Download.mp4', 'Automated TikToks', 'https://www.tiktok.com/@astronomydaily');
 createPortfolioItem('item2', 'EcoCoin - Google Chrome 2024-10-14 19-56-29 (1).mp4', 'WebApp for Sustainable Eating', 'https://ecocoins.co');
@@ -108,6 +107,8 @@ createPortfolioItem('item4', '1015 (1) (1).mp4', 'Educational Website', 'https:/
 
 // Scroll event handler
 window.addEventListener('scroll', onScroll);
+
+let hasReachedBottom = false; // Flag to track if user has reached the bottom
 
 function onScroll() {
   const scrollY = window.scrollY;
@@ -180,7 +181,7 @@ function onScroll() {
     const viewThreshold = viewportHeight - itemHeight / 20;  // Reduce the threshold
     if (itemTop < viewThreshold) {
       // Item is in view, reveal it slowly
-      const revealFactor = Math.min(100, (viewThreshold - itemTop) / (viewThreshold));  // Slower reveal
+      const revealFactor = Math.min(1, (viewThreshold - itemTop) / (viewThreshold));  // Slower reveal
       item.style.opacity = revealFactor;  // Gradual opacity change
       item.style.transform = `translateY(${(1 - revealFactor) * 10}px)`;  // Slow translation
     } else {
@@ -189,6 +190,20 @@ function onScroll() {
       item.style.transform = 'translateY(20px)';
     }
   });
+
+  // Check if user has scrolled to the bottom
+  if (scrollPercent >= 1) {
+    if (!hasReachedBottom) {
+      hasReachedBottom = true;
+      // Trigger the effect: Increase rotation speed
+      // Additional effects can be added here
+    }
+  } else {
+    if (hasReachedBottom) {
+      hasReachedBottom = false;
+      // Reset effects if necessary
+    }
+  }
 }
 
 // Handle window resize
@@ -213,6 +228,16 @@ function onWindowResize() {
 // Animation loop
 function animate() {
   requestAnimationFrame(animate);
+
+  if (object) {
+    // Adjust rotation speed based on whether user has scrolled to bottom
+    if (hasReachedBottom) {
+      object.rotation.y += 0.1; // Faster rotation when at bottom
+    } else {
+      object.rotation.y += 0.01; // Normal rotation
+    }
+  }
+
   renderer.render(scene, camera);
 }
 
