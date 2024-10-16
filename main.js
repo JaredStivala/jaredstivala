@@ -102,7 +102,7 @@ function createPortfolioItem(id, mediaPath, title, link) {
 
 // Create portfolio items with images and videos
 createPortfolioItem('item1', 'Download.mp4', 'Automated TikToks', 'https://www.tiktok.com/@astronomydaily');
-createPortfolioItem('item2', 'EcoCoin - Google Chrome 2024-10-14 19-56-29.mp4', 'WebApp for Sustainable Eating', 'https://ecocoins.co');
+createPortfolioItem('item2', 'EcoCoin - Google Chrome 2024-10-14 19-56-29 (1).mp4', 'WebApp for Sustainable Eating', 'https://ecocoins.co');
 createPortfolioItem('item3', 'WhatsApp Video 2024-10-04 at 13.14.22_63bae061.mp4', 'Digital Skills Helper');
 createPortfolioItem('item4', '1015 (1) (1).mp4', 'Educational Website', 'https://endspeciesism.org');
 
