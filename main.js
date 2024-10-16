@@ -178,7 +178,7 @@ function onScroll() {
     const itemHeight = rect.height;
 
     // Adjust the timing and opacity threshold
-    const viewThreshold = viewportHeight - itemHeight / 20;  // Reduce the threshold
+    const viewThreshold = viewportHeight - itemHeight / 40;  // Reduce the threshold
     if (itemTop < viewThreshold) {
       // Item is in view, reveal it slowly
       const revealFactor = Math.min(1, (viewThreshold - itemTop) / (viewThreshold));  // Slower reveal
