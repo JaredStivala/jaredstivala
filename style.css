@@ -50,7 +50,7 @@ main {
 }
 
 section {
-  height: 600vh;
+  height: 600vh; /* Default height */
 }
 
 .portfolio-container {
@@ -62,8 +62,7 @@ section {
 
 .portfolio-item {
   position: relative;
-  margin: 150vh 0;
-  /* Adjust vertical spacing */
+  margin: 150vh 0; /* Adjust vertical spacing */
   width: 80%;
   max-width: 800px;
   opacity: 0;
@@ -87,8 +86,7 @@ section {
   width: auto;
   max-width: 100%;
   height: auto;
-  max-height: 600px;
-  /* Set your desired max height */
+  max-height: 600px; /* Set your desired max height */
   border: 2px solid #ffffff;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
@@ -111,6 +109,14 @@ section {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 600px) {
+  section {
+    height: 300vh; /* Reduce the height on mobile devices */
+  }
+
+  .portfolio-item {
+    margin: 75vh 0; /* Reduce vertical spacing on mobile */
+  }
+
   .portfolio-item h2 {
     font-size: 1.2em;
   }
