@@ -229,14 +229,7 @@ function onWindowResize() {
 function animate() {
   requestAnimationFrame(animate);
 
-  if (object) {
-    // Adjust rotation speed based on whether user has scrolled to bottom
-    if (hasReachedBottom) {
-      object.rotation.y += 0.1; // Faster rotation when at bottom
-    } else {
-      object.rotation.y += 0.01; // Normal rotation
-    }
-  }
+  // Removed constant rotation of the object here
 
   renderer.render(scene, camera);
 }
